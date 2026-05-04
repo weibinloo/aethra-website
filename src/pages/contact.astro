@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Contact | Aethra"
+  description="Get in touch with Aethra to discuss your data and AI strategy needs. Book a discovery call or send us a message."
+>
+  <section class="hero container section">
+    <p class="eyebrow reveal">Get in touch</p>
+    <h1 class="reveal">Let's start a conversation.</h1>
+    <p class="hero-copy reveal">
+      Whether you have a specific challenge or just want to explore what's
+      possible, we'd love to hear from you.
+    </p>
+  </section>
+
+  <section class="container section contact-section">
+    <div class="contact-grid">
+      <div class="reveal">
+        <ContactForm />
+      </div>
+      <div class="contact-info reveal">
+        <div class="info-card">
+          <h3>Email us directly</h3>
+          <a class="email-link" href="mailto:hello@aethra.ai">hello@aethra.ai</a>
+        </div>
+        <div class="info-card">
+          <h3>What to expect</h3>
+          <p>
+            We'll respond within one business day. If it's a good fit, we'll
+            schedule a 30-minute discovery call to understand your needs and
+            explore how we can help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .info-card {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .info-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .email-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.25s ease;
+  }
+
+  .email-link:hover {
+    color: var(--accent-2);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

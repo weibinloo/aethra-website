@@ -1,0 +1,607 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+
+const pillars = [
+  {
+    number: '01',
+    title: 'Data & AI Strategy',
+    blurb:
+      'A practical strategy that ties AI investments to measurable business outcomes, operating realities, and risk posture.',
+    features: [
+      'AI maturity and opportunity assessment',
+      'Use-case prioritisation with ROI lens',
+      'Operating model and capability roadmap',
+    ],
+    icon:
+      '<svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 16V9"/><path d="M11 16V5"/><path d="M16 16v-9"/><path d="M21 16V11"/></svg>',
+  },
+  {
+    number: '02',
+    title: 'Data Foundations',
+    blurb:
+      'Modernise your data platform, governance, and quality controls so AI products run on trusted and observable data.',
+    features: ['Data platform architecture', 'Governance and quality controls', 'Measurement and observability'],
+    icon:
+      '<svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>',
+  },
+  {
+    number: '03',
+    title: 'Delivery Execution',
+    blurb:
+      'Move from roadmap to production with embedded delivery support across product, engineering, and change management.',
+    features: ['Phased delivery blueprint', 'Execution governance and cadence', 'Adoption and capability uplift'],
+    icon:
+      '<svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 17l8 4 8-4"/></svg>',
+  },
+];
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Assess',
+    body: 'Rapidly diagnose your current data maturity, AI readiness, and organisational constraints.',
+    deliverable: 'Maturity and gap report',
+  },
+  {
+    number: '02',
+    title: 'Strategise',
+    body: 'Create a prioritised strategy with clear use-cases, sequencing, and investment logic.',
+    deliverable: '12-month roadmap',
+  },
+  {
+    number: '03',
+    title: 'Deliver',
+    body: 'Stand up delivery structures, teams, and governance to execute with confidence.',
+    deliverable: 'Live initiatives in motion',
+  },
+  {
+    number: '04',
+    title: 'Scale',
+    body: 'Institutionalise capabilities so value compounds through repeatable operating practices.',
+    deliverable: 'Sustained AI capability',
+  },
+];
+
+const caseCards = [
+  {
+    tag: 'Retail · Data Strategy',
+    metric: '42%',
+    title: 'Faster decision cycles',
+    body: 'Executive reporting moved from monthly lag to near-real-time visibility with aligned KPI ownership.',
+  },
+  {
+    tag: 'Logistics · AI Mapping',
+    metric: '3.1x',
+    title: 'Use-case pipeline growth',
+    body: 'A structured opportunity map increased qualified AI initiatives and improved cross-functional buy-in.',
+  },
+  {
+    tag: 'SaaS · Delivery Model',
+    metric: '8 mo',
+    title: 'Roadmap acceleration',
+    body: 'A phased delivery blueprint shortened execution timelines and reduced delivery risk.',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'What type of companies does Aethra work with?',
+    a: 'We partner with ambitious companies that want to modernise data capabilities and execute practical AI strategies with measurable business outcomes.',
+  },
+  {
+    q: 'Do you only provide strategy, or do you support implementation?',
+    a: 'Both. We define strategy and support delivery, so plans are translated into executable work with ownership and governance.',
+  },
+  {
+    q: 'How long does an engagement usually take?',
+    a: 'Most engagements start with a focused assessment sprint, then move into phased strategy and delivery support over 8 to 16 weeks depending on scope.',
+  },
+  {
+    q: 'Can you work alongside our internal teams?',
+    a: 'Yes. We are designed to work as an extension of your leadership, product, and technical teams to build internal capability while delivering outcomes.',
+  },
+];
+---
+
+<BaseLayout
+  title="Aethra | Data & AI Strategy Consulting"
+  description="Aethra helps companies design and deliver practical data and AI strategies that create measurable business impact."
+>
+  <section class="hero container" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow-row reveal">
+          <span class="pill-status">
+            <span class="pill-dot"></span>
+            Consulting and delivery for decisive teams
+          </span>
+        </div>
+        <p class="eyebrow reveal">Data and AI strategy partners for growing companies</p>
+        <h1 class="reveal" style="margin-top: 1.4rem;">
+          Build a clear
+          <span class="gradient-text"> data and AI strategy </span>
+          that delivers in production.
+        </h1>
+        <p class="hero-copy reveal">
+          Aethra is a boutique advisory helping organisations move from fragmented initiatives to coordinated data and AI execution.
+          We align strategy, operating model, and delivery so outcomes are measurable and sustainable.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href={withBase('/contact')}>Book discovery call <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#assessment">Take maturity assessment</a>
+        </div>
+        <div class="hero-meta reveal">
+          <div class="hero-meta-item">
+            <div class="meta-num">10+</div>
+            <div class="meta-label">Projects delivered</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-num">5+</div>
+            <div class="meta-label">Industries supported</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-num">100%</div>
+            <div class="meta-label">Strategy-to-delivery focus</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
+
+          <div class="orbit-spin">
+            <div class="orbit-node orbit-node-data">DATA</div>
+          </div>
+          <div class="orbit-spin orbit-spin-2">
+            <div class="orbit-node orbit-node-strat">STRATEGY</div>
+          </div>
+          <div class="orbit-spin orbit-spin-3">
+            <div class="orbit-node orbit-node-build">DELIVERY</div>
+          </div>
+
+          <div class="hero-core"><span class="hero-core-text">AETHRA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trusted">
+    <div class="container">
+      <p class="trusted-label">Supporting teams modernising their data and AI operating model</p>
+      <div class="trusted-row">
+        <span class="trusted-item">RETAIL</span>
+        <span class="trusted-item">LOGISTICS</span>
+        <span class="trusted-item">SaaS</span>
+        <span class="trusted-item">HEALTH</span>
+        <span class="trusted-item">FINANCE</span>
+        <span class="trusted-item">PROPTECH</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="container section" id="services">
+    <div class="section-head reveal">
+      <p class="eyebrow">What we do</p>
+      <h2>Three pillars, one accountable team.</h2>
+      <p class="lead">
+        We work end-to-end so strategy and delivery do not split across disconnected partners.
+      </p>
+    </div>
+
+    <div class="pillars">
+      {pillars.map((pillar, idx) => (
+        <article class="pillar reveal" style={`transition-delay: ${idx * 80}ms;`}>
+          <div class="pillar-num">{pillar.number} / 03</div>
+          <div class="pillar-icon" set:html={pillar.icon}></div>
+          <h3>{pillar.title}</h3>
+          <p>{pillar.blurb}</p>
+          <ul class="pillar-features">
+            {pillar.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section" id="assessment">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Where do you stand?</p>
+      <h2 style="max-width: 28ch;">The 2-minute data and AI maturity assessment.</h2>
+      <p class="lead" style="text-align: center;">
+        Five questions. Honest answers. Get a practical view of your current maturity and next step.
+      </p>
+    </div>
+
+    <div class="maturity reveal" id="maturity-widget">
+      <div class="maturity-left">
+        <p class="eyebrow" id="maturity-label"></p>
+        <div class="maturity-meta">
+          <span id="maturity-progress-copy"></span>
+          <span class="maturity-meta-divider"></span>
+          <span id="maturity-time-copy"></span>
+        </div>
+        <h3 class="maturity-question" id="maturity-question"></h3>
+        <div class="maturity-options" id="maturity-options"></div>
+        <div class="maturity-progress-bar">
+          <div class="maturity-progress-fill" id="maturity-progress-fill"></div>
+        </div>
+        <div class="maturity-nav">
+          <button class="btn btn-ghost btn-sm" id="maturity-back" type="button">← Back</button>
+          <button class="btn btn-primary btn-sm" id="maturity-next" type="button">Next <span class="arrow">→</span></button>
+          <button class="btn btn-primary btn-sm" id="maturity-contact" type="button">Go to contact <span class="arrow">→</span></button>
+          <button class="btn btn-ghost btn-sm" id="maturity-reset" type="button">Retake</button>
+        </div>
+      </div>
+
+      <div class="dial-wrap" aria-hidden="true">
+        <svg class="dial-svg" viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="dialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="var(--accent)"></stop>
+              <stop offset="100%" stop-color="var(--accent-2)"></stop>
+            </linearGradient>
+          </defs>
+          <circle class="dial-track" cx="100" cy="100" r="86"></circle>
+          <circle class="dial-progress" id="maturity-dial" cx="100" cy="100" r="86" stroke="url(#dialGrad)"></circle>
+        </svg>
+        <div class="dial-center">
+          <span class="dial-label" id="dial-label">Progress</span>
+          <span class="dial-num" id="dial-num">0<sup>%</sup></span>
+          <span class="dial-tier" id="dial-tier">ASSESSMENT</span>
+          <span class="dial-question" id="dial-question"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section" id="process">
+    <div class="section-head reveal">
+      <p class="eyebrow">How we work</p>
+      <h2>Four phases from strategy clarity to delivery momentum.</h2>
+    </div>
+
+    <div class="process-grid">
+      {processSteps.map((step, idx) => (
+        <article class="process-step reveal" style={`transition-delay: ${idx * 70}ms;`}>
+          <div class="process-num">{step.number} · {step.title.toUpperCase()}</div>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+          <div class="process-deliverable">→ {step.deliverable}</div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="why-band" id="why">
+    <div class="container">
+      <div class="why-editorial">
+        <div class="why-eyebrow-row reveal">
+          <span class="why-rule"></span>
+          <p class="eyebrow" style="margin: 0;">Why Aethra</p>
+          <span class="why-rule"></span>
+        </div>
+
+        <blockquote class="why-quote reveal">
+          <span class="why-quote-mark" aria-hidden="true">“</span>
+          Most consultancies stop at presentations.
+          <span class="gradient-text"> We align strategy with delivery execution.</span>
+        </blockquote>
+
+        <p class="why-attribution reveal">Operator-led advisory built for practical business outcomes.</p>
+
+        <div class="why-reasons reveal">
+          <div class="why-reason"><span class="why-reason-k">Specialism</span><span class="why-reason-v">Data and AI strategy grounded in operating reality.</span></div>
+          <div class="why-reason"><span class="why-reason-k">Output</span><span class="why-reason-v">Execution-ready roadmaps with ownership and cadence.</span></div>
+          <div class="why-reason"><span class="why-reason-k">Team</span><span class="why-reason-v">Product, engineering, and strategy expertise in one unit.</span></div>
+          <div class="why-reason"><span class="why-reason-k">Scope</span><span class="why-reason-v">Assess → strategise → deliver → scale.</span></div>
+        </div>
+
+        <div class="why-cta-row reveal">
+          <a class="btn btn-primary" href={withBase('/contact')}>Book a discovery call <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href={withBase('/services')}>Explore services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section" id="cases">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected outcomes</p>
+      <h2>Impact we help teams create.</h2>
+    </div>
+
+    <div class="cases">
+      {caseCards.map((item, idx) => (
+        <article class="case-card reveal" style={`transition-delay: ${idx * 70}ms;`}>
+          <div class="case-tag">{item.tag}</div>
+          <div class="case-metric">{item.metric}</div>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section" id="faq">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Frequently asked</p>
+      <h2>Questions we often hear from leadership teams.</h2>
+    </div>
+
+    <div class="faq-list">
+      {faqItems.map((faq, idx) => (
+        <article class={`faq-item reveal ${idx === 0 ? 'open in-view' : ''}`}>
+          <button class="faq-q" type="button" aria-expanded={idx === 0 ? 'true' : 'false'}>
+            <span>{faq.q}</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" style={idx === 0 ? 'grid-template-rows: 1fr;' : undefined}>
+            <div class="faq-a-inner-wrap">
+              <div class="faq-a-inner">{faq.a}</div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section" id="contact">
+    <div class="cta reveal">
+      <p class="eyebrow">Start a conversation</p>
+      <h2>Ready to shape your next data and AI chapter?</h2>
+      <p>
+        Tell us where you are today and where you want to get to. We will return with a clear, practical next step.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={withBase('/contact')}>Contact Aethra <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="mailto:hello@aethra.ai">hello@aethra.ai</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const maturityQuestions = [
+      {
+        label: 'Data foundations',
+        q: 'How would you describe your current data foundation?',
+        options: [
+          { label: 'Scattered across tools and spreadsheets.', score: 5 },
+          { label: 'Warehouse in place, but quality and trust are inconsistent.', score: 12 },
+          { label: 'Modern stack and governance, with some gaps.', score: 18 },
+          { label: 'Production-grade platform with strong observability and ownership.', score: 22 },
+        ],
+      },
+      {
+        label: 'AI execution',
+        q: 'How far has your organisation taken AI into production?',
+        options: [
+          { label: 'Early exploration and small experiments.', score: 4 },
+          { label: 'Pilots have run, but limited production adoption.', score: 10 },
+          { label: 'One or two AI-enabled workflows are live.', score: 16 },
+          { label: 'Multiple AI initiatives are live and measured.', score: 22 },
+        ],
+      },
+      {
+        label: 'Operating model',
+        q: 'How clear is ownership for data and AI outcomes?',
+        options: [
+          { label: 'No clear ownership yet.', score: 4 },
+          { label: 'Ownership exists but is fragmented.', score: 10 },
+          { label: 'Defined owners with partial governance.', score: 16 },
+          { label: 'Clear cross-functional ownership and decision cadence.', score: 20 },
+        ],
+      },
+      {
+        label: 'Strategy alignment',
+        q: 'How tightly is AI strategy linked to business objectives?',
+        options: [
+          { label: 'Not yet formally linked.', score: 3 },
+          { label: 'Strategic intent exists but lacks prioritisation.', score: 8 },
+          { label: 'Prioritised strategy with defined initiatives.', score: 14 },
+          { label: 'Sequenced strategy tied to ROI and funding decisions.', score: 18 },
+        ],
+      },
+      {
+        label: 'Ambition',
+        q: 'What is your 12-18 month AI ambition?',
+        options: [
+          { label: 'Internal productivity improvements.', score: 6 },
+          { label: 'Launch targeted AI-enabled capabilities.', score: 12 },
+          { label: 'Re-architect a core workflow around AI.', score: 16 },
+          { label: 'Build AI as a strategic growth driver.', score: 18 },
+        ],
+      },
+    ];
+
+    function getTier(score) {
+      if (score < 30) {
+        return {
+          name: 'Exploring',
+          recommendation:
+            'Start with a focused assessment and opportunity map. Clarify the 2-3 initiatives with the strongest business leverage.',
+        };
+      }
+      if (score < 55) {
+        return {
+          name: 'Activating',
+          recommendation:
+            'You have momentum. A coordinated strategy and first delivery blueprint can convert pilots into reliable execution.',
+        };
+      }
+      if (score < 80) {
+        return {
+          name: 'Scaling',
+          recommendation:
+            'You are beyond early pilots. Strengthen governance and delivery cadence to scale outcomes across teams.',
+        };
+      }
+      return {
+        name: 'Leading',
+        recommendation:
+          'You are operating at high maturity. Focus on platform leverage, advanced use-cases, and capability compounding.',
+      };
+    }
+
+    const maturityRoot = document.querySelector('#maturity-widget');
+    if (maturityRoot) {
+      const total = maturityQuestions.length;
+      let step = 0;
+      let answers = {};
+
+      const labelEl = document.querySelector('#maturity-label');
+      const progressCopyEl = document.querySelector('#maturity-progress-copy');
+      const timeCopyEl = document.querySelector('#maturity-time-copy');
+      const questionEl = document.querySelector('#maturity-question');
+      const optionsEl = document.querySelector('#maturity-options');
+      const fillEl = document.querySelector('#maturity-progress-fill');
+
+      const backBtn = document.querySelector('#maturity-back');
+      const nextBtn = document.querySelector('#maturity-next');
+      const contactBtn = document.querySelector('#maturity-contact');
+      const resetBtn = document.querySelector('#maturity-reset');
+
+      const dial = document.querySelector('#maturity-dial');
+      const dialLabel = document.querySelector('#dial-label');
+      const dialNum = document.querySelector('#dial-num');
+      const dialTier = document.querySelector('#dial-tier');
+      const dialQuestion = document.querySelector('#dial-question');
+
+      const radius = 86;
+      const circumference = 2 * Math.PI * radius;
+      dial?.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
+
+      function score() {
+        return Object.values(answers).reduce((sum, value) => sum + Number(value), 0);
+      }
+
+      function setDialProgress(percent) {
+        const p = Math.max(0, Math.min(100, percent));
+        const offset = circumference - (p / 100) * circumference;
+        dial?.setAttribute('stroke-dashoffset', String(offset));
+      }
+
+      function renderQuestion() {
+        const current = maturityQuestions[step];
+        const selected = answers[step];
+
+        if (labelEl) labelEl.textContent = current.label;
+        if (progressCopyEl) progressCopyEl.textContent = `Question ${step + 1} of ${total}`;
+        if (timeCopyEl) timeCopyEl.textContent = `~${30 - step * 5}s left`;
+        if (questionEl) questionEl.textContent = current.q;
+
+        if (optionsEl) {
+          optionsEl.innerHTML = '';
+          current.options.forEach((option) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `maturity-option ${selected === option.score ? 'selected' : ''}`;
+            button.setAttribute('role', 'radio');
+            button.setAttribute('aria-checked', String(selected === option.score));
+            button.innerHTML = `<span class="opt-bullet"></span><span>${option.label}</span>`;
+            button.addEventListener('click', () => {
+              answers = { ...answers, [step]: option.score };
+              renderQuestion();
+            });
+            optionsEl.appendChild(button);
+          });
+        }
+
+        if (fillEl) fillEl.style.width = `${(step / total) * 100}%`;
+        if (backBtn) backBtn.style.display = step > 0 ? 'inline-flex' : 'none';
+        if (nextBtn) {
+          nextBtn.style.display = 'inline-flex';
+          nextBtn.style.opacity = selected == null ? '0.5' : '1';
+          nextBtn.textContent = step === total - 1 ? 'See your result' : 'Next';
+        }
+        if (contactBtn) contactBtn.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+
+        const progressPercent = Math.round((step / total) * 100);
+        if (dialLabel) dialLabel.textContent = 'Progress';
+        if (dialNum) dialNum.innerHTML = `${progressPercent}<sup>%</sup>`;
+        if (dialTier) dialTier.textContent = 'ASSESSMENT';
+        if (dialQuestion) dialQuestion.textContent = current.label;
+        setDialProgress(progressPercent);
+      }
+
+      function renderResult() {
+        const totalScore = Math.min(score(), 100);
+        const tier = getTier(totalScore);
+
+        if (labelEl) labelEl.textContent = 'Your result';
+        if (progressCopyEl) progressCopyEl.textContent = 'Assessment complete';
+        if (timeCopyEl) timeCopyEl.textContent = 'Recommended next step';
+        if (questionEl) questionEl.innerHTML = `You are <span class="gradient-text">${tier.name}</span>.`;
+
+        if (optionsEl) {
+          optionsEl.innerHTML = `<div class="result-card"><h4>Recommended next step</h4><p>${tier.recommendation}</p></div>`;
+        }
+
+        if (fillEl) fillEl.style.width = '100%';
+        if (backBtn) backBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (contactBtn) contactBtn.style.display = 'inline-flex';
+        if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+        if (dialLabel) dialLabel.textContent = 'Your score';
+        if (dialNum) dialNum.innerHTML = `${totalScore}<sup>/100</sup>`;
+        if (dialTier) dialTier.textContent = tier.name.toUpperCase();
+        if (dialQuestion) dialQuestion.textContent = 'MATURITY';
+        setDialProgress(totalScore);
+      }
+
+      backBtn?.addEventListener('click', () => {
+        step = Math.max(0, step - 1);
+        renderQuestion();
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        if (answers[step] == null) {
+          return;
+        }
+
+        if (step === total - 1) {
+          renderResult();
+          return;
+        }
+
+        step += 1;
+        renderQuestion();
+      });
+
+      resetBtn?.addEventListener('click', () => {
+        step = 0;
+        answers = {};
+        renderQuestion();
+      });
+
+      contactBtn?.addEventListener('click', () => {
+        const contactSection = document.querySelector('#contact');
+        contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      renderQuestion();
+    }
+
+    document.querySelectorAll('.faq-item .faq-q').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        if (!item) {
+          return;
+        }
+
+        const answer = item.querySelector('.faq-a');
+        const isOpen = item.classList.contains('open');
+        item.classList.toggle('open', !isOpen);
+        button.setAttribute('aria-expanded', String(!isOpen));
+        if (answer) {
+          answer.style.gridTemplateRows = !isOpen ? '1fr' : '0fr';
+        }
+      });
+    });
+  </script>
+</BaseLayout>

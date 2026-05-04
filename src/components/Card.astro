@@ -1,0 +1,33 @@
+---
+import { withBase } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description: string;
+  href?: string;
+  icon?: string;
+}
+
+const { title, description, href, icon } = Astro.props;
+---
+
+<article class="card reveal">
+  {icon && <div class="card-icon" set:html={icon} />}
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {href && <a class="card-link" href={withBase(href)}>Learn more &rarr;</a>}
+</article>
+
+<style>
+  .card-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: color 0.25s ease;
+  }
+
+  .card-link:hover {
+    color: var(--accent-2);
+  }
+</style>

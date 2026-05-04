@@ -1,0 +1,109 @@
+---
+const email = 'hello@aethra.ai';
+---
+
+<form method="POST" action={`mailto:${email}`} enctype="text/plain">
+  <div class="form-group">
+    <label for="name">Name <span class="required">*</span></label>
+    <input type="text" id="name" name="name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email <span class="required">*</span></label>
+    <input type="email" id="email" name="email" required />
+  </div>
+
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company" />
+  </div>
+
+  <div class="form-group">
+    <label for="service">Service of interest</label>
+    <select id="service" name="service">
+      <option value="">Select a service...</option>
+      <option value="data-strategy">Data Strategy</option>
+      <option value="ai-opportunity-mapping">AI Opportunity Mapping</option>
+      <option value="delivery-blueprint">Delivery Blueprint</option>
+      <option value="general">General inquiry</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message <span class="required">*</span></label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send message</button>
+</form>
+
+<style>
+  form {
+    display: grid;
+    gap: 1.4rem;
+    max-width: 540px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .form-group {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .required {
+    color: var(--accent);
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid var(--surface-border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.25s ease;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a8bed5' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    padding-right: 2.2rem;
+  }
+
+  select option {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button[type='submit'] {
+    cursor: pointer;
+    width: max-content;
+    font-family: inherit;
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/paths';
+---
+
+<BaseLayout
+  title="Data Strategy | Aethra"
+  description="Aethra helps businesses define data architecture, governance, and prioritised initiatives that make data a trusted growth asset."
+>
+  <section class="hero container section">
+    <p class="eyebrow reveal">Data Strategy</p>
+    <h1 class="reveal">Turn data into a trusted growth asset.</h1>
+    <p class="hero-copy reveal">
+      Define the architecture, governance, and prioritised initiatives that
+      transform raw data into reliable business intelligence.
+    </p>
+  </section>
+
+  <section class="container section">
+    <div class="section-head reveal">
+      <p class="eyebrow">The challenge</p>
+      <h2>Data without strategy is just noise</h2>
+    </div>
+    <div class="service-content reveal">
+      <p>
+        Most businesses are drowning in data but starving for insight. Siloed
+        systems, inconsistent governance, and unclear priorities mean that data
+        investments rarely translate into business value.
+      </p>
+      <p>
+        A well-designed data strategy connects your data assets to your business
+        goals — giving you a clear, prioritised roadmap from where you are today
+        to where you need to be.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head reveal">
+      <p class="eyebrow">What we deliver</p>
+      <h2>Tangible outputs, not theory</h2>
+    </div>
+    <div class="grid services-grid">
+      <article class="card reveal">
+        <h3>Data Architecture</h3>
+        <p>A target-state architecture that fits your scale, systems, and growth trajectory.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Governance Framework</h3>
+        <p>Practical governance policies covering ownership, quality, privacy, and access.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Prioritised Roadmap</h3>
+        <p>A phased initiative plan ranked by business impact, feasibility, and dependencies.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>From diagnosis to delivery</h2>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <span class="step">01</span>
+        <h3>Discovery</h3>
+        <p>We assess your current data landscape — systems, teams, processes, and pain points.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <span class="step">02</span>
+        <h3>Design</h3>
+        <p>We design a target-state strategy aligned to your business goals and constraints.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <span class="step">03</span>
+        <h3>Deliver</h3>
+        <p>We hand off a clear roadmap with implementation guidance and change management support.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="cta reveal">
+      <p class="eyebrow">Get started</p>
+      <h2>Ready to build your data strategy?</h2>
+      <p>Book a discovery call and we'll assess where you are and where you need to go.</p>
+      <a class="btn btn-primary" href={withBase('/contact')}>Book discovery call</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-content {
+    max-width: 68ch;
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .service-content p {
+    color: var(--text-muted);
+    font-size: 1.06rem;
+    line-height: 1.7;
+  }
+</style>

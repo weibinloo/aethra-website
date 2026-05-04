@@ -1,0 +1,26 @@
+{
+  "name": "aethra-website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weibinloo/aethra-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/weibinloo/aethra-website/issues"
+  },
+  "homepage": "https://github.com/weibinloo/aethra-website#readme",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^6.0.8"
+  }
+}
