@@ -379,21 +379,20 @@ h3 {
 
 .orbit {
   position: absolute;
-  inset: 10%;
   border: 1px solid var(--surface-border);
   border-radius: 50%;
 }
 
 .orbit-1 {
-  transform: rotate(0deg);
+  inset: 27%;
 }
 
 .orbit-2 {
-  transform: rotate(60deg);
+  inset: 18%;
 }
 
 .orbit-3 {
-  transform: rotate(120deg);
+  inset: 8%;
 }
 
 .hero-core {
@@ -414,21 +413,25 @@ h3 {
   color: var(--text);
 }
 
-.orbit-spin,
-.orbit-spin-2,
-.orbit-spin-3 {
+.orbit-spin {
   position: absolute;
-  inset: 14%;
   animation: spinA 20s linear infinite;
 }
 
-.orbit-spin-2 {
+.orbit-spin-ai {
+  inset: 27%;
+  animation-duration: 18s;
+}
+
+.orbit-spin-strategy {
+  inset: 18%;
   animation-duration: 24s;
   animation-direction: reverse;
 }
 
-.orbit-spin-3 {
-  animation-duration: 29s;
+.orbit-spin-scale {
+  inset: 8%;
+  animation-duration: 30s;
 }
 
 .orbit-node {
