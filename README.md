@@ -25,8 +25,8 @@ The site deploys to GitHub Pages through `.github/workflows/deploy.yml`.
 
 On GitHub, set `Settings > Pages > Source` to `GitHub Actions`. Each push to `main` builds the Astro site and publishes `dist/`.
 
-For the current repository, the expected Pages URL is:
+For the current repository, the expected production URL is:
 
 ```text
-https://weibinloo.github.io/aethra-website/
+https://theaethra.co.uk/
 ```
