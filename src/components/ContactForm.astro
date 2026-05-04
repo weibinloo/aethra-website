@@ -1,8 +1,8 @@
----
-const email = 'hello@aethra.ai';
----
+<form method="POST" action="https://api.web3forms.com/submit">
+  <input type="hidden" name="access_key" value="402a07e2-d560-42de-b943-1351af5f29d2" />
+  <input type="hidden" name="subject" value="New Aethra website enquiry" />
+  <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
 
-<form method="POST" action={`mailto:${email}`} enctype="text/plain">
   <div class="form-group">
     <label for="name">Name <span class="required">*</span></label>
     <input type="text" id="name" name="name" required />
