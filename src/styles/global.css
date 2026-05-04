@@ -109,9 +109,16 @@ body {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.65rem;
   text-decoration: none;
   color: var(--text);
+}
+
+.logo-img {
+  width: auto;
+  height: 2.15rem;
+  display: block;
+  object-fit: contain;
 }
 
 .logo-mark {
