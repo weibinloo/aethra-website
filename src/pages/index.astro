@@ -422,6 +422,10 @@ const faqItems = [
           name: 'Exploring',
           recommendation:
             'Start with a focused assessment and opportunity map. Clarify the 2-3 initiatives with the strongest business leverage.',
+          transitionLabel: 'Start with clarity',
+          transition:
+            'Share your current position with Aethra and we will help turn uncertainty into a practical first roadmap.',
+          cta: 'Map our opportunities',
         };
       }
       if (score < 55) {
@@ -429,6 +433,10 @@ const faqItems = [
           name: 'Activating',
           recommendation:
             'You have momentum. A coordinated strategy and first delivery blueprint can convert pilots into reliable execution.',
+          transitionLabel: 'Convert momentum',
+          transition:
+            'Talk to Aethra about moving from pilots and scattered initiatives into a focused delivery plan.',
+          cta: 'Shape our delivery plan',
         };
       }
       if (score < 80) {
@@ -436,12 +444,20 @@ const faqItems = [
           name: 'Scaling',
           recommendation:
             'You are beyond early pilots. Strengthen governance and delivery cadence to scale outcomes across teams.',
+          transitionLabel: 'Scale what works',
+          transition:
+            'Bring Aethra into the next phase to strengthen ownership, governance, and repeatable business results.',
+          cta: 'Scale our AI results',
         };
       }
       return {
         name: 'Leading',
         recommendation:
           'You are operating at high maturity. Focus on platform leverage, advanced use-cases, and capability compounding.',
+        transitionLabel: 'Compound advantage',
+        transition:
+          'Contact Aethra to identify the next layer of advanced AI opportunities and turn maturity into sustained advantage.',
+        cta: 'Explore advanced growth',
       };
     }
 
@@ -537,13 +553,25 @@ const faqItems = [
         if (questionEl) questionEl.innerHTML = `You are <span class="gradient-text">${tier.name}</span>.`;
 
         if (optionsEl) {
-          optionsEl.innerHTML = `<div class="result-card"><h4>Recommended next step</h4><p>${tier.recommendation}</p></div>`;
+          optionsEl.innerHTML = `
+            <div class="result-card">
+              <h4>Recommended next step</h4>
+              <p>${tier.recommendation}</p>
+              <div class="result-bridge">
+                <span>${tier.transitionLabel}</span>
+                <p>${tier.transition}</p>
+              </div>
+            </div>
+          `;
         }
 
         if (fillEl) fillEl.style.width = '100%';
         if (backBtn) backBtn.style.display = 'none';
         if (nextBtn) nextBtn.style.display = 'none';
-        if (contactBtn) contactBtn.style.display = 'inline-flex';
+        if (contactBtn) {
+          contactBtn.style.display = 'inline-flex';
+          contactBtn.innerHTML = `${tier.cta} <span class="arrow">→</span>`;
+        }
         if (resetBtn) resetBtn.style.display = 'inline-flex';
 
         if (dialLabel) dialLabel.textContent = 'Your score';
