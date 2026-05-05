@@ -19,6 +19,11 @@ import ContactForm from '../components/ContactForm.astro';
   <section class="container section contact-section">
     <div class="contact-grid">
       <div class="reveal">
+        <div class="assessment-context" id="assessment-context" hidden>
+          <p class="eyebrow">Assessment result</p>
+          <h2 id="assessment-title">Your result</h2>
+          <p id="assessment-copy"></p>
+        </div>
         <ContactForm />
       </div>
       <div class="contact-info reveal">
@@ -33,6 +38,56 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </div>
   </section>
+
+  <script>
+    const maturityContent = {
+      exploring: {
+        label: 'Exploring',
+        need: 'clarity',
+        copy:
+          'You are still shaping the right starting point. Use the form below to tell us where things feel unclear, and we will help map the highest-value next steps.',
+      },
+      activating: {
+        label: 'Activating',
+        need: 'deliver',
+        copy:
+          'You have momentum but need a stronger path from pilots to execution. Use the form below to share what is already in motion and where delivery needs focus.',
+      },
+      scaling: {
+        label: 'Scaling',
+        need: 'scale',
+        copy:
+          'You are ready to scale what works. Use the form below to tell us where governance, ownership, or delivery cadence needs to improve.',
+      },
+      leading: {
+        label: 'Leading',
+        need: 'prioritise',
+        copy:
+          'You are operating at a higher maturity level. Use the form below to explore the next layer of advanced AI opportunities and business value.',
+      },
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const maturity = params.get('maturity')?.toLowerCase();
+    const score = params.get('score');
+    const content = maturity ? maturityContent[maturity] : null;
+
+    if (content) {
+      const contextEl = document.querySelector('#assessment-context');
+      const titleEl = document.querySelector('#assessment-title');
+      const copyEl = document.querySelector('#assessment-copy');
+      const maturityInput = document.querySelector('#maturity-result-input');
+      const scoreInput = document.querySelector('#maturity-score-input');
+      const serviceSelect = document.querySelector('#service');
+
+      contextEl?.removeAttribute('hidden');
+      if (titleEl) titleEl.textContent = `Your result: ${content.label}${score ? ` (${score}/100)` : ''}`;
+      if (copyEl) copyEl.textContent = content.copy;
+      if (maturityInput) maturityInput.value = content.label;
+      if (scoreInput && score) scoreInput.value = score;
+      if (serviceSelect) serviceSelect.value = content.need;
+    }
+  </script>
 </BaseLayout>
 
 <style>
@@ -46,6 +101,31 @@ import ContactForm from '../components/ContactForm.astro';
   .contact-info {
     display: grid;
     gap: 2rem;
+  }
+
+  .assessment-context {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 540px;
+    margin-bottom: 1.8rem;
+    padding: 1.3rem;
+    border: 1px solid var(--surface-border-strong);
+    border-radius: var(--radius);
+    background: linear-gradient(155deg, rgba(95, 210, 255, 0.08), rgba(87, 240, 192, 0.05));
+  }
+
+  .assessment-context[hidden] {
+    display: none;
+  }
+
+  .assessment-context h2 {
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  }
+
+  .assessment-context p:last-child {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 
   .info-card {

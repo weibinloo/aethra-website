@@ -1,6 +1,8 @@
 <form method="POST" action="https://api.web3forms.com/submit">
   <input type="hidden" name="access_key" value="402a07e2-d560-42de-b943-1351af5f29d2" />
   <input type="hidden" name="subject" value="New Aethra website enquiry" />
+  <input type="hidden" id="maturity-result-input" name="maturity_result" value="" />
+  <input type="hidden" id="maturity-score-input" name="maturity_score" value="" />
   <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
 
   <div class="form-group">
@@ -19,19 +21,20 @@
   </div>
 
   <div class="form-group">
-    <label for="service">Service of interest</label>
+    <label for="service">What best describes your current need?</label>
     <select id="service" name="service">
-      <option value="">Select a service...</option>
-      <option value="data-strategy">Data Strategy</option>
-      <option value="ai-opportunity-mapping">AI Opportunity Mapping</option>
-      <option value="delivery-blueprint">Delivery Blueprint</option>
-      <option value="general">General inquiry</option>
+      <option value="">Select your current need...</option>
+      <option value="clarity">I need clarity on where to start</option>
+      <option value="prioritise">I need to prioritise AI opportunities</option>
+      <option value="deliver">I need help delivering a roadmap</option>
+      <option value="scale">I need to scale existing data/AI work</option>
+      <option value="general">General enquiry</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label for="message">Message <span class="required">*</span></label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">What are you trying to achieve with data or AI? <span class="required">*</span></label>
+    <textarea id="message" name="message" rows="5" required placeholder="Briefly describe your current challenge, goal, or opportunity."></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary">Send message</button>

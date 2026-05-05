@@ -68,19 +68,19 @@ const caseCards = [
     tag: 'Retail · Data Strategy',
     metric: '42%',
     title: 'Faster decision cycles',
-    body: 'Executive reporting moved from monthly lag to near-real-time visibility with aligned KPI ownership.',
+    body: 'Leadership reporting moved from monthly lag to near-real-time visibility, giving teams clearer ownership of the KPIs that mattered.',
   },
   {
     tag: 'Logistics · AI Mapping',
     metric: '3.1x',
     title: 'Use-case pipeline growth',
-    body: 'A structured opportunity map increased qualified AI initiatives and improved cross-functional buy-in.',
+    body: 'A structured opportunity map helped teams qualify 3.1x more AI initiatives and focus investment on work with clearer business value.',
   },
   {
     tag: 'Commercial · AI Delivery',
     metric: '82%',
     title: 'Sales growth uplift',
-    body: 'AI-led targeting and sales prioritisation increased sales by 82% while focusing teams on the highest-value opportunities.',
+    body: 'AI-led sales prioritisation helped commercial teams focus on higher-value accounts, improving conversion focus and increasing sales by 82%.',
   },
 ];
 
@@ -124,8 +124,8 @@ const faqItems = [
           that delivers in production.
         </h1>
         <p class="hero-copy reveal">
-          Aethra is a boutique advisory helping organisations move from fragmented initiatives to coordinated data and AI execution.
-          We align strategy, operating model, and delivery so outcomes are measurable and sustainable.
+          Aethra helps leadership teams identify, prioritise, and deliver high-value data and AI initiatives without getting stuck in strategy decks,
+          scattered pilots, or unclear ownership.
         </p>
         <div class="hero-actions reveal">
           <a class="btn btn-primary" href={withBase('/contact')}>Book discovery call <span class="arrow">→</span></a>
@@ -466,6 +466,7 @@ const faqItems = [
       const total = maturityQuestions.length;
       let step = 0;
       let answers = {};
+      let currentMaturityResult = null;
 
       const labelEl = document.querySelector('#maturity-label');
       const progressCopyEl = document.querySelector('#maturity-progress-copy');
@@ -500,6 +501,7 @@ const faqItems = [
       }
 
       function renderQuestion() {
+        currentMaturityResult = null;
         const current = maturityQuestions[step];
         const selected = answers[step];
 
@@ -546,6 +548,7 @@ const faqItems = [
       function renderResult() {
         const totalScore = Math.min(score(), 100);
         const tier = getTier(totalScore);
+        currentMaturityResult = { tier: tier.name.toLowerCase(), score: totalScore };
 
         if (labelEl) labelEl.textContent = 'Your result';
         if (progressCopyEl) progressCopyEl.textContent = 'Assessment complete';
@@ -607,8 +610,12 @@ const faqItems = [
       });
 
       contactBtn?.addEventListener('click', () => {
-        const contactUrl = contactBtn.getAttribute('data-contact-url') || '/contact';
-        window.location.href = contactUrl;
+        const contactUrl = new URL(contactBtn.getAttribute('data-contact-url') || '/contact', window.location.origin);
+        if (currentMaturityResult) {
+          contactUrl.searchParams.set('maturity', currentMaturityResult.tier);
+          contactUrl.searchParams.set('score', String(currentMaturityResult.score));
+        }
+        window.location.href = `${contactUrl.pathname}${contactUrl.search}`;
       });
 
       renderQuestion();
