@@ -232,7 +232,7 @@ const faqItems = [
         <div class="maturity-nav">
           <button class="btn btn-ghost btn-sm" id="maturity-back" type="button">← Back</button>
           <button class="btn btn-primary btn-sm" id="maturity-next" type="button">Next <span class="arrow">→</span></button>
-          <button class="btn btn-primary btn-sm" id="maturity-contact" type="button">Go to contact <span class="arrow">→</span></button>
+          <button class="btn btn-primary btn-sm" id="maturity-contact" type="button" data-contact-url={withBase('/contact')}>Go to contact <span class="arrow">→</span></button>
           <button class="btn btn-ghost btn-sm" id="maturity-reset" type="button">Retake</button>
         </div>
       </div>
@@ -607,8 +607,8 @@ const faqItems = [
       });
 
       contactBtn?.addEventListener('click', () => {
-        const contactSection = document.querySelector('#contact');
-        contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const contactUrl = contactBtn.getAttribute('data-contact-url') || '/contact';
+        window.location.href = contactUrl;
       });
 
       renderQuestion();
