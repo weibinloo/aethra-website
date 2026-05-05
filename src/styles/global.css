@@ -17,7 +17,7 @@
   --radius-sm: 12px;
   --radius-lg: 24px;
   --shadow: 0 22px 70px rgba(8, 28, 54, 0.45);
-  --section-pad: 6rem;
+  --section-pad: 4.6rem;
 }
 
 * {
@@ -289,7 +289,7 @@ h3 {
 }
 
 .hero {
-  padding: 5.4rem 0 4rem;
+  padding: 4.2rem 0 3.2rem;
 }
 
 .hero-grid {
@@ -1261,13 +1261,13 @@ h3 {
   }
 
   .hero {
-    padding-top: 4rem;
+    padding-top: 3.4rem;
   }
 }
 
 @media (max-width: 720px) {
   :root {
-    --section-pad: 4rem;
+    --section-pad: 3.2rem;
   }
 
   .container {
